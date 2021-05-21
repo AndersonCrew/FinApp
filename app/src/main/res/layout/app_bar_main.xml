@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/csHeader"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorMain"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:padding="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_menu"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:src="@drawable/logo"
+            android:padding="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAvt"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="15dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp">
+            <ImageView
+                android:src="@drawable/n2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/imaNotification"
+            android:layout_marginRight="15dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cardAvt"
+            android:src="@drawable/ic_alarm"
+            android:layout_width="23dp"
+            android:layout_height="23dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:background="@color/colorNotification"
+            android:layout_marginBottom="27dp"
+            android:layout_marginLeft="27dp"
+            app:layout_constraintBottom_toBottomOf="@id/cardAvt"
+            app:layout_constraintStart_toStartOf="@id/cardAvt"
+            app:cardCornerRadius="10dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp">
+            <TextView
+                android:text="6"
+                android:textColor="@color/white"
+                android:textSize="5sp"
+                android:gravity="center"
+                android:background="@color/colorNotification"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:background="@color/colorNotification"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="18dp"
+            app:layout_constraintBottom_toBottomOf="@id/imaNotification"
+            app:layout_constraintStart_toStartOf="@id/imaNotification"
+            app:cardCornerRadius="10dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp">
+            <TextView
+                android:text="6"
+                android:textColor="@color/white"
+                android:textSize="5sp"
+                android:gravity="center"
+                android:background="@color/colorNotification"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <LinearLayout
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp">
+            <TextView
+                android:id="@+id/tvOverView"
+                android:background="@drawable/bg_tab_line"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/tvPages"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/tvComponents"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/tvMyCards"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/tvSettings"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--OverView-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/csOverView"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgOverView"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_settings"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+                <TextView
+                    android:text="@string/overview"
+                    android:textSize="10sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/colorMain"
+                    app:layout_constraintEnd_toEndOf="@id/imgOverView"
+                    app:layout_constraintTop_toBottomOf="@id/imgOverView"
+                    app:layout_constraintStart_toStartOf="@id/imgOverView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--Page-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/csPages"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgPage"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_page"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:tint="@color/black" />
+                <TextView
+                    android:text="@string/pages"
+                    android:textSize="10sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@id/imgPage"
+                    app:layout_constraintTop_toBottomOf="@id/imgPage"
+                    app:layout_constraintStart_toStartOf="@id/imgPage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--Component-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/csComponent"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgComponents"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_apps"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:tint="@color/black" />
+                <TextView
+                    android:text="@string/components"
+                    android:textSize="10sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@id/imgComponents"
+                    app:layout_constraintTop_toBottomOf="@id/imgComponents"
+                    app:layout_constraintStart_toStartOf="@id/imgComponents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--My Card-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/csMyCard"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgCard"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_credit_card"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:tint="@color/black" />
+                <TextView
+                    android:text="@string/my_cards"
+                    android:textSize="10sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@id/imgCard"
+                    app:layout_constraintTop_toBottomOf="@id/imgCard"
+                    app:layout_constraintStart_toStartOf="@id/imgCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--Settings-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/csSettings"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgSetting"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_settings"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:tint="@color/black" />
+                <TextView
+                    android:text="@string/settings"
+                    android:textSize="10sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@id/imgSetting"
+                    app:layout_constraintTop_toBottomOf="@id/imgSetting"
+                    app:layout_constraintStart_toStartOf="@id/imgSetting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

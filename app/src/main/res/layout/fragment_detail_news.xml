@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <ImageView
+            android:id="@+id/imgBack"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_back"
+            android:padding="17dp"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="match_parent"
+            app:tint="@color/colorMain" />
+
+        <TextView
+            android:text="@string/blog_post"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/btnAdd"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_baseline_share_24"
+            android:padding="15dp"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="match_parent"
+            app:tint="@color/colorMain" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingBottom="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Rule you need to \nknow in business"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgAvatar"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/m3"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+
+            <TextView
+                android:id="@+id/tvBy"
+                android:textColor="@color/black"
+                android:alpha="0.8"
+                app:layout_constraintStart_toEndOf="@id/imgAvatar"
+                app:layout_constraintTop_toTopOf="@id/imgAvatar"
+                app:layout_constraintBottom_toBottomOf="@id/imgAvatar"
+                android:text="By"
+                android:layout_marginStart="10dp"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@color/colorMain"
+                app:layout_constraintStart_toEndOf="@id/tvBy"
+                app:layout_constraintTop_toTopOf="@id/imgAvatar"
+                app:layout_constraintBottom_toBottomOf="@id/imgAvatar"
+                android:text="Anderson"
+                android:layout_marginStart="4dp"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@color/black"
+                android:alpha="0.8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/imgAvatar"
+                app:layout_constraintBottom_toBottomOf="@id/imgAvatar"
+                android:text="24, September 2021"
+                android:layout_marginEnd="15dp"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv1"
+                android:textColor="@color/black"
+                android:alpha="0.6"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingEnd="20dp"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/imgAvatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgAvatar"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam fringilla euismod. Nulla viverra
+                eu ante tincidunt viverra. Sed dignissim maximus turpis et dictum."
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv2"
+                android:textColor="@color/black"
+                android:alpha="0.8"
+                android:paddingEnd="20dp"
+                android:textSize="13sp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/imgAvatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv1"
+                android:text="Proin luctus viverra volutpat. Aenean hendrerit nisi quis consequat pretium. Maecenas ut vestibulum
+                justo. Morbi eleifend ante eget arcu sodales malesuada. Nunc interdum ac diam ut bibendum. Proin gravida
+                sit amet urna ac scelerisque. Vivamus consectetur ex vel felis bibendum fermentum."
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardImage"
+                app:layout_constraintTop_toBottomOf="@id/tv2"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/m3"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv3"
+                android:textColor="@color/black"
+                android:alpha="0.8"
+                android:paddingEnd="20dp"
+                android:textSize="13sp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/imgAvatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardImage"
+                android:text="Nullam augue magna, dignissim sit amet libero eu, ultrices tempus metus. Ut finibus ac justo eu tempor.
+                Quisque egestas lectus neque, quis sodales lacus volutpat id.Quisque egestas lectus neque, quis sodales lacus volutpat id.
+Nullam augue magna, dignissim sit amet libero eu, ultrices tempus metus. Ut finibus ac justo eu tempor.
+                \nQuisque egestas lectus neque, quis sodales lacus volutpat id."
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="15dp"
+                android:id="@+id/cardShare"
+                app:layout_constraintTop_toBottomOf="@id/tv3"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:background="@color/colorMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/imgSharePost"
+                        android:src="@drawable/ic_baseline_ios_share_24"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"/>
+
+                    <TextView
+                        android:id="@+id/tvSharePost"
+                        android:textSize="12sp"
+                        android:text="Share This Post!"
+                        android:gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvRelated"
+                android:text="Related Posts"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_bold"
+                app:layout_constraintTop_toBottomOf="@id/cardShare"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cs1"
+                app:layout_constraintTop_toBottomOf="@id/tvRelated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintWidth_percent="0.43"
+                    android:layout_width="0dp"
+                    android:layout_height="230dp"
+                    >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:src="@drawable/n1"
+                            android:scaleType="centerCrop"
+                            android:layout_weight="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"/>
+                        <TextView
+                            android:text="What will be the value of bitcoin in the next"
+                            android:textColor="@color/black"
+                            android:layout_weight="1"
+                            android:paddingTop="10dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintWidth_percent="0.43"
+                    android:layout_width="0dp"
+                    android:layout_height="230dp"
+                    >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:src="@drawable/n2"
+                            android:scaleType="centerCrop"
+                            android:layout_weight="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"/>
+                        <TextView
+                            android:text="Rules you need to know in business"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:textColor="@color/black"
+                            android:layout_weight="1"
+                            android:paddingTop="10dp"
+                            android:gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintTop_toBottomOf="@id/cs1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintWidth_percent="0.43"
+                    android:layout_width="0dp"
+                    android:layout_height="230dp"
+                    >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:src="@drawable/n3"
+                            android:scaleType="centerCrop"
+                            android:layout_weight="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"/>
+                        <TextView
+                            android:text="10 easy ways to save your money"
+                            android:textColor="@color/black"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:layout_weight="1"
+                            android:paddingTop="10dp"
+                            android:gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintWidth_percent="0.43"
+                    android:layout_width="0dp"
+                    android:layout_height="230dp"
+                    >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:src="@drawable/n4"
+                            android:scaleType="centerCrop"
+                            android:layout_weight="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"/>
+                        <TextView
+                            android:text="Follow the Financial agenda with..."
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:textColor="@color/black"
+                            android:layout_weight="1"
+                            android:paddingTop="10dp"
+                            android:gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

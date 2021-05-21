@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_components">
+
+    <fragment
+        android:id="@+id/nav_components"
+        android:name="com.android.financiapp.ui.components.ComponentsFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_components" />
+
+    <fragment
+        android:id="@+id/nav_pages"
+        android:name="com.android.financiapp.ui.pages.PagesFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_pages" />
+
+    <fragment
+        android:id="@+id/nav_mycard"
+        android:name="com.android.financiapp.ui.my_card.MyCardFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_mycard" />
+
+    <fragment
+        android:id="@+id/nav_overview"
+        android:name="com.android.financiapp.ui.overview.OverviewFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_overview" />
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.android.financiapp.ui.settings.SettingFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
