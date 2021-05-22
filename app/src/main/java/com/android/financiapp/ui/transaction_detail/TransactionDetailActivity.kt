@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.android.financiapp.BaseFragment
 import com.android.financiapp.R
 import com.android.financiapp.databinding.ActivityTransactionDetailBinding
+import com.android.financiapp.event.Event
 
 class TransactionDetailActivity : BaseFragment() {
 
@@ -20,6 +21,7 @@ class TransactionDetailActivity : BaseFragment() {
     ): View? {
         binding = ActivityTransactionDetailBinding.inflate(layoutInflater)
         binding?.imgBask?.setOnClickListener { requireActivity().onBackPressed() }
+        binding?.card3?.setOnClickListener { Event.goToVerification() }
         return binding?.root
     }
 }

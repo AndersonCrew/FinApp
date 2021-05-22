@@ -10,9 +10,12 @@
         android:background="@color/black"
         android:alpha="0.4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/llDialog"
+        android:layout_height="0dp"/>
 
     <LinearLayout
+        android:id="@+id/llDialog"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@color/white"
@@ -131,7 +134,7 @@
             android:layout_height="45dp">
             <TextView
                 android:background="@color/colorMain"
-                android:text="@string/withdraw"
+                android:text="@string/send"
                 android:gravity="center"
                 android:textColor="@color/white"
                 android:layout_width="match_parent"

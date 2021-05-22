@@ -23,6 +23,7 @@ import com.android.financiapp.ui.saving.SavingFragment
 import com.android.financiapp.ui.settings.SettingFragment
 import com.android.financiapp.ui.transaction.TransactionFragment
 import com.android.financiapp.ui.transaction_detail.TransactionDetailActivity
+import com.android.financiapp.ui.verifycation.VerificationFragment
 import java.util.*
 
 class MainActivity : BaseActivity() {
@@ -94,7 +95,7 @@ class MainActivity : BaseActivity() {
                 }
 
                 2-> {
-                    fragment = ComponentsFragment()
+                    fragment = TransactionFragment()
                 }
 
                 3-> {
@@ -144,6 +145,10 @@ class MainActivity : BaseActivity() {
 
         it[Event.GOTO_NEWS_DETAIL]?.let {
             addFragment(R.id.frMain, DetailNewsFragment())
+        }
+
+        it[Event.GOTO_VERIFICATION]?.let {
+            addFragment(R.id.frMain, VerificationFragment())
         }
     }
 

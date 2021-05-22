@@ -13,6 +13,7 @@ object Event {
     const val GO_TO_NOTIFICATION = "GO_TO_NOTIFICATION"
     const val GOTO_NEWS_FRAGMENT = "GOTO_NEWS_FRAGMENT"
     const val GOTO_NEWS_DETAIL = "GOTO_NEWS_DETAIL"
+    const val GOTO_VERIFICATION = "GOTO_VERIFICATION"
 
 
 
@@ -46,5 +47,9 @@ object Event {
 
     fun goToNewsDetail() {
         FinApplication.eventBus.onNext(hashMapOf(GOTO_NEWS_DETAIL to ""))
+    }
+
+    fun goToVerification() {
+        FinApplication.eventBus.onNext(hashMapOf(GOTO_VERIFICATION to ""))
     }
 }
