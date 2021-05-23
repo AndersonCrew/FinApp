@@ -1705,7 +1705,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:alpha="0.8"
-                    android:text="@string/components"
+                    android:text="@string/transactions"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="@id/card3"
                     app:layout_constraintStart_toEndOf="@id/card3"

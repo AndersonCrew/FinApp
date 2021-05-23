@@ -12,27 +12,27 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.android.financiapp.R
+import com.android.financiapp.databinding.FragmentMycardBinding
+import com.android.financiapp.event.Event
 
 class MyCardFragment : Fragment() {
 
-    private lateinit var myCardViewModel: MyCardViewModel
+    private var binding: FragmentMycardBinding?= null
+
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        myCardViewModel =
-                ViewModelProvider(this).get(MyCardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_mycard, container, false)
-        val rvCard: RecyclerView = root.findViewById(R.id.rvCard)
-        val csAddCard: ConstraintLayout = root.findViewById(R.id.csAddCard)
-        val vGone: View = root.findViewById(R.id.vGone)
-        val btnAdd: ImageView = root.findViewById(R.id.btnAdd)
-        rvCard.adapter = CardAdapter()
 
-        vGone.setOnClickListener {  csAddCard.visibility = View.GONE }
-        btnAdd.setOnClickListener {  csAddCard.visibility = View.VISIBLE }
-        return root
+        binding = FragmentMycardBinding.inflate(inflater, container, false)
+        binding?.rvCard?.adapter = CardAdapter()
+
+        binding?.vGone?.setOnClickListener {  binding?.csAddCard?.visibility = View.GONE }
+        binding?.btnAdd?.setOnClickListener {  binding?.csAddCard?.visibility = View.VISIBLE }
+        binding?.imgBack?.setOnClickListener { Event.onTabChanged(0) }
+
+        return binding?.root
     }
 }

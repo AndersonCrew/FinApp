@@ -9,19 +9,20 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.android.financiapp.R
+import com.android.financiapp.databinding.FragmentPagesBinding
+import com.android.financiapp.event.Event
 
 class PagesFragment : Fragment() {
 
-    private lateinit var pagesViewModel: PagesViewModel
+    private var binding: FragmentPagesBinding?= null
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        pagesViewModel =
-                ViewModelProvider(this).get(PagesViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_pages, container, false)
-        return root
+        binding = FragmentPagesBinding.inflate(inflater, container, false)
+        binding?.imgBack?.setOnClickListener { Event.onTabChanged(0) }
+        return binding?.root
     }
 }

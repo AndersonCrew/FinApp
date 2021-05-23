@@ -20,6 +20,7 @@ class SettingFragment: Fragment() {
     ): View? {
         binding = FragmentSettingsBinding.inflate(layoutInflater)
         binding?.imgNotification?.setOnClickListener { Event.goToNotification() }
+        binding?.imgBack?.setOnClickListener { Event.onTabChanged(0) }
         return binding?.root
     }
 }

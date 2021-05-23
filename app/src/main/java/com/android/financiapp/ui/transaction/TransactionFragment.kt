@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.android.financiapp.BaseFragment
 import com.android.financiapp.R
 import com.android.financiapp.databinding.FragmentTransactionBinding
+import com.android.financiapp.event.Event
 
 class TransactionFragment: BaseFragment() {
     private var binding: FragmentTransactionBinding?= null
@@ -16,7 +17,7 @@ class TransactionFragment: BaseFragment() {
         binding?.rvTransaction?.adapter = TransactionAdapter()
 
         binding?.imgBack?.setOnClickListener {
-            requireActivity().onBackPressed()
+            Event.onTabChanged(0)
         }
         return binding?.root
     }
